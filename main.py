@@ -191,7 +191,28 @@ def registrar_producto():
 
 
 def mostrar_inventario():
-    print("\nFuncionalidad en desarrollo.")
+    """Muestra todos los productos registrados."""
+
+    limpiar_pantalla()
+
+    print("=" * 55)
+    print("             INVENTARIO DE PRODUCTOS")
+    print("=" * 55)
+
+    if len(inventario) == 0:
+        print("\nNo existen productos registrados.")
+        return
+
+    for producto in inventario:
+
+        print(f"Código     : {producto['codigo']}")
+        print(f"Nombre     : {producto['nombre']}")
+        print(f"Categoría  : {producto['categoria']}")
+        print(f"Precio     : ${producto['precio']:.2f}")
+        print(f"Stock      : {producto['stock']}")
+        print("-" * 55)
+
+    print(f"\nTotal de productos registrados: {len(inventario)}")
 
 
 def buscar_producto():
