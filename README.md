@@ -1,10 +1,26 @@
-# InventoryControl
+# 📦 Sistema de Control de Inventario
 
-Sistema de Control de Inventario desarrollado en Python como proyecto final de la asignatura Lógica de Programación.
+## Descripción
 
-## Objetivo
+El Sistema de Control de Inventario es una aplicación de consola desarrollada en Python como proyecto final de la asignatura **Lógica de Programación**. Su propósito es facilitar la administración de productos mediante operaciones básicas de registro, consulta, actualización y eliminación de información, aplicando los conceptos fundamentales de programación aprendidos durante el curso.
 
-Desarrollar un sistema de control de inventario que permita registrar, consultar, actualizar y eliminar productos utilizando estructuras lógicas de programación en Python.
+---
+
+## Objetivo del sistema
+
+Desarrollar un sistema de control de inventario que permita gestionar productos de forma sencilla y organizada, utilizando estructuras lógicas de programación como funciones, condicionales, ciclos, listas, diccionarios y tuplas.
+
+---
+
+## Funcionalidades
+
+El sistema permite realizar las siguientes operaciones:
+
+* Registrar productos.
+* Mostrar el inventario.
+* Buscar productos por código.
+* Actualizar la información de un producto.
+* Eliminar productos del inventario.
 
 ---
 
@@ -17,30 +33,52 @@ Desarrollar un sistema de control de inventario que permita registrar, consultar
 
 ---
 
-## Funcionalidades
-
-* [ ] Registrar productos
-* [ ] Mostrar inventario
-* [ ] Buscar productos
-* [ ] Actualizar productos
-* [ ] Eliminar productos
-* [ ] Mostrar productos con bajo stock
-* [ ] Calcular el valor total del inventario
-* [ ] Mostrar estadísticas
-
----
-
 ## Estructura del proyecto
 
 ```text
 InventoryControl/
+│
 ├── main.py
 ├── README.md
-└── .gitignore
+├── .gitignore
+│
+└── docs
+    ├── Diagramas
+    │   ├── Arquitectura.png
+    │   ├── CasosDeUso.png
+    │   └── DiagramaFlujo.png
+    │
+    └── Informe 
+        └── Informe_Final.pdf
 ```
 
 ---
 
-## Estado del proyecto
+## Cómo ejecutar el proyecto
 
-🚧 En desarrollo.
+1. Clonar el repositorio.
+2. Abrir el proyecto en PyCharm.
+3. Ejecutar el archivo `main.py`.
+4. Utilizar el menú principal para acceder a las funcionalidades del sistema.
+
+---
+
+## Integrante
+
+* **María Sol León Molina**
+
+---
+
+## Asignatura
+
+**Lógica de Programación**
+
+Carrera de Ingeniería en Desarrollo de Software
+
+Universidad Internacional del Ecuador
+
+---
+
+## Fecha
+
+Junio 2026
