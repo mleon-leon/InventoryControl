@@ -214,33 +214,116 @@ def mostrar_inventario():
 
     print(f"\nTotal de productos registrados: {len(inventario)}")
 
-
 def buscar_producto():
-    print("\nFuncionalidad en desarrollo.")
+    """Busca un producto por su código."""
 
+    limpiar_pantalla()
+
+    print("=" * 55)
+    print("               BUSCAR PRODUCTO")
+    print("=" * 55)
+
+    if len(inventario) == 0:
+        print("\nNo existen productos registrados.")
+        return
+
+    codigo = input("Ingrese el código del producto: ").strip().upper()
+
+    for producto in inventario:
+
+        if producto["codigo"] == codigo:
+
+            print("\nProducto encontrado\n")
+
+            print(f"Código     : {producto['codigo']}")
+            print(f"Nombre     : {producto['nombre']}")
+            print(f"Categoría  : {producto['categoria']}")
+            print(f"Precio     : ${producto['precio']:.2f}")
+            print(f"Stock      : {producto['stock']}")
+
+            return
+
+    print("\nNo se encontró ningún producto con ese código.")
 
 def actualizar_producto():
-    print("\nFuncionalidad en desarrollo.")
+    """Actualiza la información de un producto."""
 
+    limpiar_pantalla()
+
+    print("=" * 55)
+    print("             ACTUALIZAR PRODUCTO")
+    print("=" * 55)
+
+    if len(inventario) == 0:
+        print("\nNo existen productos registrados.")
+        return
+
+    codigo = input("Ingrese el código del producto a actualizar: ").strip().upper()
+
+    for producto in inventario:
+
+        if producto["codigo"] == codigo:
+
+            print("\nProducto encontrado.\n")
+
+            producto["nombre"] = input("Nuevo nombre: ").strip().title()
+
+            print("\nCategorías disponibles:")
+
+            for indice, categoria in enumerate(CATEGORIAS, start=1):
+                print(f"{indice}. {categoria}")
+
+            while True:
+
+                opcion = input("\nSeleccione la nueva categoría: ")
+
+                if opcion.isdigit():
+
+                    opcion = int(opcion)
+
+                    if 1 <= opcion <= len(CATEGORIAS):
+                        producto["categoria"] = CATEGORIAS[opcion - 1]
+                        break
+
+                print("Opción inválida.")
+
+            while True:
+
+                try:
+
+                    precio = float(input("Nuevo precio: "))
+
+                    if precio > 0:
+                        producto["precio"] = precio
+                        break
+
+                    print("El precio debe ser mayor que cero.")
+
+                except ValueError:
+                    print("Ingrese un número válido.")
+
+            while True:
+
+                try:
+
+                    stock = int(input("Nuevo stock: "))
+
+                    if stock >= 0:
+                        producto["stock"] = stock
+                        break
+
+                    print("El stock no puede ser negativo.")
+
+                except ValueError:
+                    print("Ingrese un número entero.")
+
+            print("\nProducto actualizado correctamente.")
+            return
+
+    print("\nNo se encontró el producto.")
 
 def eliminar_producto():
     print("\nFuncionalidad en desarrollo.")
-
-# ==========================================================
-# FUNCIONES DE REPORTES
-# ==========================================================
-
-def mostrar_bajo_stock():
-    print("\nFuncionalidad en desarrollo.")
-
-
-def calcular_valor_total():
-    print("\nFuncionalidad en desarrollo.")
-
-
-def mostrar_estadisticas():
-    print("\nFuncionalidad en desarrollo.")
-
 
 # ==========================================================
 # MENÚ PRINCIPAL
@@ -258,10 +341,7 @@ def mostrar_menu():
     print("3. Buscar producto")
     print("4. Actualizar producto")
     print("5. Eliminar producto")
-    print("6. Mostrar productos con bajo stock")
-    print("7. Calcular valor total del inventario")
-    print("8. Mostrar estadísticas")
-    print("9. Salir")
+    print("6. Salir")
 
     print("=" * 55)
 
@@ -297,15 +377,6 @@ def main():
             eliminar_producto()
 
         elif opcion == "6":
-            mostrar_bajo_stock()
-
-        elif opcion == "7":
-            calcular_valor_total()
-
-        elif opcion == "8":
-            mostrar_estadisticas()
-
-        elif opcion == "9":
             print("\nGracias por utilizar el sistema.")
             break
 
