@@ -323,7 +323,42 @@ def actualizar_producto():
     print("\nNo se encontró el producto.")
 
 def eliminar_producto():
-    print("\nFuncionalidad en desarrollo.")
+    """Elimina un producto del inventario."""
+
+    limpiar_pantalla()
+
+    print("=" * 55)
+    print("              ELIMINAR PRODUCTO")
+    print("=" * 55)
+
+    if len(inventario) == 0:
+        print("\nNo existen productos registrados.")
+        return
+
+    codigo = input("Ingrese el código del producto a eliminar: ").strip().upper()
+
+    for producto in inventario:
+
+        if producto["codigo"] == codigo:
+
+            print("\nProducto encontrado.\n")
+            print(f"Código    : {producto['codigo']}")
+            print(f"Nombre    : {producto['nombre']}")
+            print(f"Categoría : {producto['categoria']}")
+            print(f"Precio    : ${producto['precio']:.2f}")
+            print(f"Stock     : {producto['stock']}")
+
+            confirmar = input("\n¿Está seguro de eliminar este producto? (S/N): ").strip().upper()
+
+            if confirmar == "S":
+                inventario.remove(producto)
+                print("\nProducto eliminado correctamente.")
+            else:
+                print("\nOperación cancelada.")
+
+            return
+
+    print("\nNo se encontró ningún producto con ese código.")
 
 # ==========================================================
 # MENÚ PRINCIPAL
