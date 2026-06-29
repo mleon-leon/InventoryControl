@@ -79,6 +79,19 @@ Universidad Internacional del Ecuador
 
 ---
 
-## Fecha
+## Informe
+El informe completo podrá ser encontrado dentro de la carpeta docs, Inform.
 
-Junio 2026
+## Presentación
+
+REPOSITORIO GITHUB
+
+https://github.com/mleon-leon/InventoryControl
+
+lINK PRESENTACIÓN CANVA
+
+https://canva.link/sdk42kz123q0ltq
+
+LINK VIDEO EXPLICATIVO 
+
+https://www.youtube.com/watch?v=c7YBnlsGZ3U
